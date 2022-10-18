@@ -62,7 +62,7 @@ int delete(struct node* p,int value)
 
 int main()
 {
-     printf("Name- Raunak Jain\nRoll No. 2100290120140\n");
+    
     int n;
     printf("Enter the number of elements in linked list: ");
     scanf("%d",&n);

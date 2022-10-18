@@ -1,0 +1,71 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+int main()
+{
+ //C++ program for binary search
+
+ int *a,i,itm,s,j,flag=0,low,up,mid,temp;
+ 
+ cout<<"==================================";
+ cout<<"\nC++ Program For Binary Search\n";
+ cout<<"==================================\n";
+ 
+ cout<<"\nEnter The Size Of An Array :";
+ cin>>s;
+ 
+ a=(int*)malloc(s*sizeof(int));
+ 
+ cout<<"\nEnter An Elements Of An Array"<<endl;
+ for(i=0;i<s;i++)
+ {
+ cin>>a[i];
+ }
+ 
+ for(i=1;i<s;++i)
+ {
+ for(j=0;j<(s-1);++j)
+ {
+ if(a[j]>a[j+1])
+ {
+ temp = a[j];
+ a[j] = a[j+1];
+ a[j+1] = temp;
+ }
+ }
+ }
+ cout<<"\nEnter The Number You Want To Search In An Array :";
+ cin>>itm;
+ 
+ low=0;
+ up=s-1;
+ mid=(low+up)/2;
+
+ 
+ if(itm<=a[mid])
+ {
+ for(i=0;i<=mid;i++)
+ {
+ if(a[i]==itm)
+ flag=1;
+ }
+ }
+ 
+ if(itm>a[mid])
+ {
+ for(i=mid;i<s;i++)
+ {
+ if(a[i]==itm)
+ flag=1;
+ }
+ }
+ 
+ if(flag==1)
+ {
+ cout<<"\nNumber Found In an Array \n";
+ }
+ else 
+ {
+ cout<<"\nNumber Not Found In an Array \n";
+ }
+}
